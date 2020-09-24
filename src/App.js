@@ -22,8 +22,18 @@ function App() {
     })
   }
 
+  const toggleNameHandler = (event) => {
+    setPerson({
+      person : [
+        {name : event.target.value,age:28},
+        {name : 'milan',age:29},
+        {name : 'adarsh',age:27}
+      ]
+    })
+  }
+
   let per = getperson.person.map((res) => {
-    return <Person name= {res.name} age = {res.age}></Person>;
+    return <Person name= {res.name} age = {res.age} change = {toggleNameHandler}></Person>;
   })
 
   return (
