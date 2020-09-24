@@ -22,13 +22,15 @@ function App() {
     })
   }
 
+  let per = getperson.person.map((res) => {
+    return <Person name= {res.name} age = {res.age}></Person>;
+  })
+
   return (
     <div className="App">
       <h1>My First React App</h1>
       <button onClick = {changeNameHandler} >Switch Name</button>
-      <Person name= {getperson.person[0].name} age = {getperson.person[0].age}></Person>
-      <Person name= {getperson.person[1].name} age = {getperson.person[1].age}></Person>
-      <Person name= {getperson.person[2].name} age = {getperson.person[2].age}></Person>
+      { per }
     </div>
   );
 }
